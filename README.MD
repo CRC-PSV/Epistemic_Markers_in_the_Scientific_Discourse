@@ -1,11 +1,13 @@
-Charting Epistemic Concepts   
+Epistemic markers in the scientific discourse   
 ======================
 
-In this philosophy of science project, we investigate the actual usage of epistemic terms — such as "theory", "model", "explanation", "prediction" etc.— in scientific publications with a view to shed light on the role that the corresponding epistemic concepts play in the practice of science. 
+The central role of such epistemic concepts as theory, explanation, model, or mechanism is rarely questioned in philosophy of science. Yet, what is their actual use in the practice of science? 
 
-We use computational approaches to quantify terminological patterns of occurrences and cooccurrences in a corpus of 73,771 full-text scientific articles of the biological and medical sciences (BioMed database). 
+In this philosophy of science project, we deploy text-mining methods to investigate the usage of 61 epistemic notions in a corpus of full-text articles from the biological and biomedical sciences (N=73,771). The influence of disciplinary context is also examined by splitting the corpus into sub-disciplinary clusters. 
 
-The results are published in: Malaterre, Christophe & Martin Léonard. 2023. "Charting the Territories of Epistemic Concepts in the Practice of Science: A Text-Mining Approach", British Journal for the Philosophy of Science.
+The results reveal the intricate semantic networks that these concepts actually form in the scientific discourse, not always following our intuitions, at least in some parts of science.
+
+The research is published in: Malaterre, Christophe & Martin Léonard. 2023. "Epistemic markers in the scientific discourse", Philosophy of Science.
 
 The subject being incredibly rich, both in terms of data and of philosophical inquiry, many questions remain unexplored. The whole toolset is thus made available to anyone interested in pursuing further investigations. Detailed steps to reproduce the specific results that were published are included. 
 
@@ -97,6 +99,6 @@ The code used to compute the docterm matrix was refactored before publishing, to
 Supplementary Information
 ------------------
 
-This file includes SI Tables S1, S2, S3 mentionned in the publication
+This folder includes a file with SI Table S1 mentionned in the publication (frequency of semantic fields per cluster) as well as a data-for-graph file
 
 
