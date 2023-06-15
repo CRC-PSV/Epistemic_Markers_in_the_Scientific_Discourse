@@ -19,10 +19,10 @@ We organised the repository to ensure both the reproducibility of the results pr
 
 The "run_step..." scripts correspond to the main steps described in the methods section of the article:
 - run_step_1_preprocess.py: Data extraction and preprocessing. Generation of the docterm matrix used in step 3.
-- run_step_2_cooccurrences.py: Generation of the cooccurrence matrix. This step can be omitted.
-- run_step_3_topics_clusters: Topic modeling and clustering.
-- run_step_4_lexcounts: Lexicon word counts.
-- run_step_5_results: Export the final results (average word frequencies and correlation tables).
+- run_step_2_cooccurrences.py: Generation of the cooccurrence matrix. This step, which was used in another study, can be omitted here.
+- run_step_3_topics_clusters: Topic modeling and clustering. This step creates disciplinary clusters of the documents of the corpus.
+- run_step_4_lexcounts: Lexicon word counts. This step counts the occurrences of terms belonging to semantic fields.
+- run_step_5_results: Export the final results (average frequencies of the semantic filds and correlation tables between semantic fields).
 
 These "run_step..." scripts make use of other core code used across the project and stored in the `/lib` directory. 
 
@@ -82,8 +82,14 @@ Class name: `CoocsModel`
 Counts the cooccurrence between each pair of terms within a specified vocabulary (for instance: explanation, theory, model, mechanism, understanding, prediction), within given window (defaults to +/- 5 terms centered on the target term). 
 For each pair of terms, also logs the reference id (typically a doc-paragraph identifier) of each excerpt in which they are found cooccurring.
 
+#### Semantic fields frequencies
 
-Notes on reproducibility
+
+#### Semantic fields correlations
+
+
+
+Notes on clustering reproducibility
 ------------------
 
 Due to copyright, the BioMed articles are not stored in the present repository, but should be downloaded directly from BioMed. The list of all the articles we used can be found in `srs/data/legacy/legacy_ids.json`, together with the list of documents and terms of the docterm matrix `srs/data/legacy/legacy_docterm_labels.json`.
