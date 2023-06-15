@@ -43,4 +43,4 @@ def results_main(lexcounts_df_path):
 
 
 if __name__ == '__main__':
-    results_main(RESULTS_PATH / 'test_lc_df.p')
+    results_main(RESULTS_PATH / 'LEXCOUNTS_DF.p')
