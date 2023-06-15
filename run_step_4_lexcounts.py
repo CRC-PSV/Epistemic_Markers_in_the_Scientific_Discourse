@@ -35,5 +35,5 @@ def run_lexcounts(lexcount_df_save_path, lexcount_model_save_path=None):
 
 
 if __name__ == '__main__':
-    run_lexcounts(RESULTS_PATH / 'test_lc_df.p')
+    run_lexcounts(RESULTS_PATH / 'LEXCOUNTS_DF.p')
 
