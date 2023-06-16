@@ -19,7 +19,7 @@ We organised the repository to ensure both the reproducibility of the results pr
 
 The "run_step..." scripts correspond to the main steps described in the methods section of the article:
 - run_step_1_preprocess.py: Data extraction and preprocessing. Generation of the docterm matrix used in step 3.
-- run_step_2_cooccurrences.py: Generation of the cooccurrence matrix. This step, which was used in another study, can be omitted here.
+- run_step_2_cooccurrences.py: Generation of the cooccurrence matrix. This step was used to enrich the lexicon of epistemic markers and semantic fields.
 - run_step_3_topics_clusters: Topic modeling and clustering. This step creates disciplinary clusters of the documents of the corpus.
 - run_step_4_lexcounts: Lexicon word counts. This step counts the occurrences of terms belonging to semantic fields.
 - run_step_5_results: Export the final results (average frequencies of the semantic filds and correlation tables between semantic fields).
@@ -46,49 +46,6 @@ Note that the model itself can be stored as a pickle file, which is usually reco
 These analysis tools were designed to be flexible (most of the update methods work from a generic data type, like a list of strings or a list of Tag-like objects) and could easily be used with a different corpus.
 
 
-Available analyses
-------------------
-
-This is an overview of the different tools available to conduct a series of analyses on the docmodels. See the documentation within the modules themselves for more details.
-
-#### TagCounts
-
-Location: `lib/models/tagcounts.py` 
-Class name: `TagCountsModel`
-
-Makes it possible to count a variety of tags following POS tagging of the text content stored in the docmodels. 
-For example, count the frequency of each word across the corpus, while also counting the number of its instances as noun, verb, adjective etc.
-
-#### Docterm
-
-Location: `lib/models/docterm.py` 
-Class name: `DocTermModel`
-
-Collects the data and provides the functionalities needed to build a docterm matrix. 
-The model itself is relatively lightweight and the vocabulary can be filtered using the results from a TagCountsModel before exporting the matrix, making it easier to avoid memory issues.
-
-#### LDA Topic Modeling
-
-Location: `lib/models/ldatopics.py` 
-Class name: `LdaModel`
-
-Wrapper for SKlearn's LatentDirichletAllocation providing a few useful shortcuts.
-
-#### Cooccurrences
-
-Location: `lib/models/coocs.py` 
-Class name: `CoocsModel`
-
-Counts the cooccurrence between each pair of terms within a specified vocabulary (for instance: explanation, theory, model, mechanism, understanding, prediction), within given window (defaults to +/- 5 terms centered on the target term). 
-For each pair of terms, also logs the reference id (typically a doc-paragraph identifier) of each excerpt in which they are found cooccurring.
-
-#### Semantic fields frequencies
-
-
-#### Semantic fields correlations
-
-
-
 Notes on clustering reproducibility
 ------------------
 
@@ -106,5 +63,6 @@ Supplementary Information
 ------------------
 
 This folder includes a file with SI Table S1 mentionned in the publication (frequency of semantic fields per cluster) as well as a data-for-graph file
+
 
 
